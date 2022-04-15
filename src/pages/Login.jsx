@@ -7,12 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url("https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-      center;
+  background: linear-gradient(orange,red);
   background-size: cover;
   display: flex;
   align-items: center;
@@ -81,23 +76,23 @@ const Login = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>SIGN IN</Title>
+        <Title>S'identifier</Title>
         <Form>
           <Input
-            placeholder="username"
+            placeholder="pseudo"
             onChange={(e) => setUsername(e.target.value)}
           />
           <Input
-            placeholder="password"
+            placeholder="mot de passe"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
           <Button onClick={handleClick} disabled={isFetching}>
-            LOGIN
+            Connexion
           </Button>
-          {error && <Error>Something went wrong...</Error>}
-          <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
+          {error && <Error>Quelque chose s'est mal passé...</Error>}
+          <Link>VOUS NE VOUS SOUVENEZ PAS DU MOT DE PASSE ?</Link>
+          <Link>CRÉER UN NOUVEAU COMPTE</Link>
         </Form>
       </Wrapper>
     </Container>
